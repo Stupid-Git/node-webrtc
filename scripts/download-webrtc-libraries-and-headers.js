@@ -169,4 +169,5 @@ function build(options) {
 }
 
 // Good luck!
-downloadOrBuild(options);
+console.log('No need to download for raspberry pi');
+// downloadOrBuild(options);

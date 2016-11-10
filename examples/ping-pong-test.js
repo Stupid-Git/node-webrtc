@@ -1,11 +1,17 @@
 var webrtc = require('..');
 
+console.log("getting rtc peer connections object..");
 var RTCPeerConnection     = webrtc.RTCPeerConnection;
+console.log("getting rtc session description object..");
 var RTCSessionDescription = webrtc.RTCSessionDescription;
 var RTCIceCandidate       = webrtc.RTCIceCandidate;
 
+console.log("Creating rtc peer connections..");
+
 var pc1 = new RTCPeerConnection();
 var pc2 = new RTCPeerConnection();
+
+console.log("Created rtc peer connections..");
 
 pc1.onicecandidate = function(candidate) {
   if(!candidate.candidate) return;

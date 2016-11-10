@@ -2,7 +2,6 @@
 #include "v8.h"
 
 #include "webrtc/api/peerconnectioninterface.h"
-#include "webrtc/base/scoped_ptr.h"
 #include "webrtc/base/scoped_ref_ptr.h"
 #include "webrtc/base/ssladapter.h"
 #include "webrtc/base/thread.h"
@@ -11,9 +10,11 @@
 #include "datachannel.h"
 #include "rtcstatsreport.h"
 #include "rtcstatsresponse.h"
+#include <iostream>
 
 using v8::Handle;
 using v8::Object;
+
 
 static rtc::Thread signalingThread;
 static rtc::Thread workerThread;
@@ -26,7 +27,6 @@ void setup(rtc::Thread* signalingThread, rtc::Thread* workerThread) {
 
   result = signalingThread->Start();
   assert(result);
-
   result = workerThread->Start();
   assert(result);
 }
