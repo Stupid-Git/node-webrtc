@@ -2,6 +2,28 @@
 
 [![OS X/Linus Build Status](https://secure.travis-ci.org/js-platform/node-webrtc.png?branch=develop)](http://travis-ci.org/js-platform/node-webrtc) [![Windows Build status](https://ci.appveyor.com/api/projects/status/iulc84we28o1i7b9?svg=true)](https://ci.appveyor.com/project/markandrus/node-webrtc-7bnua) [![Gratipay][wrtc-gratipay-image]][wrtc-gratipay-url]
 
+# Node WebRTC build for Raspberry PI
+This is fork of main node-webrtc, specifically targeting Raspberry PI.
+Here are the steps to install it on Raspberry PI:
+
+```
+git clone https://github.com/ssaroha/node-webrtc.git
+cd node-webrtc
+gunzip third_party/webrtc/lib/libwebrtc.a.gz
+npm install
+```
+
+To run examples:
+```
+node test/sessiondesc.js 
+node examples/ping-pong-test.js
+```
+
+
+# High level changes for Raspberry PI
+The mainline node-webrtc uses libwebrtc.a static library for each platform. We have cross compiled libwebrtc.a for ARM platform on Ubuntu linux, and checked in gzipped version of the static library in git.
+
+
 # Preamble
 
 This open-source project provides a native module for NodeJS that supports a subset of standards-compliant WebRTC features. Specifically, the PeerConnection and DataChannel APIs. 
