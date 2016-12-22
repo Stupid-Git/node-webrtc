@@ -21,7 +21,7 @@ node examples/ping-pong-test.js
 
 
 # High level changes for Raspberry PI
-The mainline node-webrtc uses libwebrtc.a static library for each platform. We have cross compiled libwebrtc.a for ARM platform on Ubuntu linux, and checked in gzipped version of the static library in git.
+The mainline node-webrtc uses libwebrtc.a static library for each platform. We have cross compiled libwebrtc.a for ARM platform on Ubuntu linux, and checked in gzipped version of the static library in git. This also contains the low-level SSL fix I ended up submitting to core webrtc: https://bugs.chromium.org/p/webrtc/issues/detail?id=6763 which enabled webrtc to work with openssl embedded with node instead of boring SSL (google's default SSL implementation that comes with webrtc)
 
 
 # Preamble
